@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>{{title}}</h1>
+
+  <!-- <h1>Learning ngIf</h1> -->
+
+  <!-- ngIf give us true and false value we can use it to hide specific element. -->
+  <!-- <div *ngIf = "!success_msg && success_flag" style="background-color: aquamarine">
+    user added successfully
+  </div> -->
+  <!-- <div *ngIf = "success_msg; else error_msg" style="background-color: aquamarine">
+    user added successfully
+  </div> -->
+  <!-- <div *ngIf = "success_msg; then updated_msg; else error_msg" style="background-color: aquamarine">
+    user added successfully
+  </div> -->
+
+
+  <!-- <ng-template #error_msg>
+    user not added successfully.
+  </ng-template>
+
+  <ng-template #updated_msg>
+    user was updated successfully.
+  </ng-template> -->
+
+  <!-- negated variable to achieve "if not" -->
+  <!-- Only ngIf -->
+  <!-- <div *ngIf="!isLoggedIn" style="background-color: aquamarine">
+    Please Login, friend.
+  </div>
+
+  <div *ngIf="isLoggedIn && isNewUser">
+    Welcome back, friend.
+  </div>
+
+  <div *ngIf="isLoggedIn || isNewUser">
+    Welcome!
+  </div>
+  <!-- ngIf and else -->
+  <!-- <div *ngIf="isLoggedIn; else loggedOut">
+    Welcome back, friend in else case
+  </div>
+
+  <ng-template #loggedOut>
+    Please friend, login first.
+  </ng-template> -->
+
+  <h2>Learning *ngFor</h2>
+  <!-- Provide local variable in the array data 
+    e.g: index -> gets the current index of the current element in iteration
+    e.g: first -> return true if the current element is the first element in iteration
+    e.g: last -> return true if the current element is the last element in iteration
+    e.g: even -> return true if the current element is the even element in iteration
+    e.g: odd -> return true if the current element is the odd element in iteration
+  -->
+  <ul>
+    <li *ngFor="let contact of contacts; index as i; first as f; last as l;">
+      <div *ngIf="f" style="background-color: aquamarine"> This is a first Record </div>
+      <div>
+        {{ i }}
+        {{contact.firstName}}
+        {{contact.lastName}}
+        {{contact.contactId}}
+      </div>
+      <div *ngIf="l" style="background-color: green"> This is a last Record </div>
+    </li>
+  </ul>
+
+  <div>
+    <p>New table with even and odd </p>
+    <ul>
+      <li *ngFor="let contact of contacts;index as i; even as e; odd as o;">
+        <div *ngIf="e" style="background-color: gray;"> This is a even Record </div>
+        <div *ngIf="o" style="background-color: blue"> This is a odd Record </div>
+        <div>
+          {{ i }}
+          {{contact.firstName}}
+          {{contact.lastName}}
+          {{contact.contactId}}
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
