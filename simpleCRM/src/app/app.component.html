@@ -109,6 +109,24 @@
     <div *ngSwitchCase="30">Display tax value is 30</div>
     <div *ngSwitchDefault>Display Default tax Value when value doesn't match that is 50%</div>
   </div>
+
+  <div>Learning ngStyle</div>
+
+  <!-- Common mistakes
+    1: not giving correct {} braces
+    2: not putting correct double/single quotes where required
+    3: spelling mistakes in defining the css properties
+    4: do not put quotes for the variables in dynamic style - it will become strings
+  -->
+  <!-- Basic use case for ngStyle -->
+  <div [ngStyle]="{'background-color': 'green' ,'color':'#fff'}">This is basic use case for ngStyle Div</div>
+  
+  <!-- dynamic values from component for ngStyle -->
+  <div [ngStyle]="{'background-color': styleProp ,'color':'#fff'}">This is Dynamic ngStyle Div</div>
+  
+  <!--ngStyle with conditional operators -->
+  <div [ngStyle]="{'color': textColor === 'blue' ? 'blue' : 'green'}">This is Conditional ngStyle Div</div>
+
 </body>
 
 </html>

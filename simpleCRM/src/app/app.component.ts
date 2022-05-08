@@ -15,6 +15,10 @@ export class AppComponent {
   superPower = "AngularLearningWithArc"; // string value
   tax = 20; // number value
 
+  styleProp = "blue"; // dynamic color property
+
+  textColor = "blue"; // conditional color property
+
 
   contacts = [ 
     {
