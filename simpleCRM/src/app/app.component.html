@@ -91,6 +91,24 @@
       </li>
     </ul>
   </div>
+
+  <h2>Learning ngSwitch</h2>
+
+  <div [ngSwitch]="superPower">
+    <!-- for string value will put '' single quotes inside double quotes -->
+    <div *ngSwitchCase="'superMan'">Display super man super Powers</div>
+    <div *ngSwitchCase="'spiderMan'">Display spider man super Powers</div>
+    <div *ngSwitchCase="'superWomen'">Display super women super Powers</div>
+    <div *ngSwitchCase="'hitMan'">Display hit man super Powers</div>
+    <div *ngSwitchDefault>Display Default Value when value doesn't match</div>
+  </div>
+
+  <div [ngSwitch]="tax">
+    <!-- for number value don't need to put '' single quotes inside double quotes -->
+    <div *ngSwitchCase="10">Display tax value is 10</div>
+    <div *ngSwitchCase="30">Display tax value is 30</div>
+    <div *ngSwitchDefault>Display Default tax Value when value doesn't match that is 50%</div>
+  </div>
 </body>
 
 </html>

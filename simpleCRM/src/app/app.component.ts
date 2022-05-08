@@ -12,6 +12,9 @@ export class AppComponent {
   // isLoggedIn = false;
   // isNewUser = false;
 
+  superPower = "AngularLearningWithArc"; // string value
+  tax = 20; // number value
+
 
   contacts = [ 
     {
