@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-loan-types',
@@ -10,13 +10,32 @@ export class LoanTypesComponent implements OnInit {
 
   addLoanTypesForm!: FormGroup;
 
-  constructor() { }
+  // Add form builder in the constructor
+  constructor(
+    private _formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+
+    /*
+    basic formGroup Example
     this.addLoanTypesForm = new FormGroup({
       'loanName': new FormControl(),
       'loanDescription': new FormControl()
     });
+    */
+  /*
+  Now by using formBuilder, which provides us three things
+  1: FormGroup
+  2: FormArray
+  3: FormControls
+  */
+
+    this.addLoanTypesForm = this._formBuilder.group({
+      'loanName': new FormControl(),
+      'loanType': new FormControl(),
+      'loanDescription': new FormControl(),
+    })
   }
 
   addLoanType(){

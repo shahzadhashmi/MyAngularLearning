@@ -2,6 +2,7 @@
 
 <form [formGroup] = "addLoanTypesForm">
     <input type="text" formControlName="loanName">
+    <input type="text" formControlName="loanType">
     <textarea formControlName="loanDescription"></textarea>
     <button (click)="addLoanType()">Add Loan Type</button>
 </form>
