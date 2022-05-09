@@ -12,7 +12,7 @@ export class LoanTypesComponent implements OnInit {
 
   // Add form builder in the constructor
   constructor(
-    private _formBuilder: FormBuilder
+    private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
@@ -24,6 +24,7 @@ export class LoanTypesComponent implements OnInit {
       'loanDescription': new FormControl()
     });
     */
+
   /*
   Now by using formBuilder, which provides us three things
   1: FormGroup
@@ -31,7 +32,7 @@ export class LoanTypesComponent implements OnInit {
   3: FormControls
   */
 
-    this.addLoanTypesForm = this._formBuilder.group({
+    this.addLoanTypesForm = this.formBuilder.group({
       'loanName': new FormControl(),
       'loanType': new FormControl(),
       'loanDescription': new FormControl(),
